@@ -4,7 +4,7 @@
 // var numbers =
 
 // // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+    var generateBtn = document.querySelector("#generate");
     var charAmount =  window.prompt("How many characters do you want your passwrod");
         if (charAmount > 8 || charAmount > 128) {
         alert("Please select a valid response")
@@ -21,11 +21,25 @@
       function generatePassword() {
       var text = ""
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*?";
-      for (var i = 0; i < 8; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-        console.log(text);
-      }
 
+      for (var i = 0; i < charAmount; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+        
+      }
+    
+      console.log(text);
+      
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", ()=>{
+        if(btn.value === "change"){
+          btn.value = text 
+        }
+      })
+      
+
+      
+
+      
       
 
         
